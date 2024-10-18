@@ -1,8 +1,10 @@
-## Azure Architecture with Custom Icons
+```json
+import mermaid from 'mermaid';
 
-```mermaid
-graph TD
-  A[Azure Function] -->|Process| B[Azure Database];
-  B -->|Store| C[Azure Storage];
-  C -->|Return| D[API];
+mermaid.registerIconPacks([
+  {
+    name: 'logos',
+    loader: () => import('@iconify-json/logos').then((module) => module.icons),
+  },
+]);
 ```
